@@ -1258,12 +1258,12 @@ impl MacroParse<BindgenAttrs> for syn::ItemForeignMod {
     fn macro_parse(self, program: &mut ast::Program, opts: BindgenAttrs) -> Result<(), Diagnostic> {
         let mut errors = Vec::new();
         match self.abi.name {
-            Some(ref l) if l.value() == "C" || l.value() == "wasm-bindgen" => {}
+            Some(ref l) if l.value() == "wasm-bindgen" => {}
             None => {}
             Some(ref other) => {
                 errors.push(err_span!(
                     other,
-                    "only foreign mods with the `C` or `wasm-bindgen` ABI are allowed"
+                    "only foreign mods with the `wasm-bindgen` ABI are allowed"
                 ));
             }
         }
