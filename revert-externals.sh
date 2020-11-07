@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-rm -rf target
-for file in $(grep -l -r 'extern "C"' .) ; do
-    sed --in-place -e 's/extern "C"/extern "C"/g' $file
-done 
+for dir in benchmarks ci crates examples guide src tests ; do
+    for file in $( grep -l -r 'extern "wasm-bindgen"' $dir ) ; do
+        sed --in-place -e 's/extern "wasm-bindgen"/extern "C"/g' $file
+    done 
+done
