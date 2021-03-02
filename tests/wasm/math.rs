@@ -2,7 +2,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/math.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn js_auto_bind_math();
 
     // There's an identity function called `roundtrip` in the module and we bind

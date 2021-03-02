@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (is_type_of = | _ | false , extends = :: js_sys :: Object , js_name = WEBGL_compressed_texture_s3tc_srgb , typescript_type = "WEBGL_compressed_texture_s3tc_srgb")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `WebglCompressedTextureS3tcSrgb` class."]

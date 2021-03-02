@@ -16,7 +16,7 @@ use wasm_bindgen::prelude::*;
 pub fn foo(_a: u32) {}
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn test(a: &str);
 
     type Js;

@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = DomRequest , extends = EventTarget , extends = :: js_sys :: Object , js_name = IDBFileRequest , typescript_type = "IDBFileRequest")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `IdbFileRequest` class."]

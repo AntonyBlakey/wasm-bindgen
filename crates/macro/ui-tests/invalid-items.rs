@@ -13,7 +13,7 @@ pub const fn foo2() {}
 struct Foo<T>(T);
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     static mut FOO: u32;
 
     pub fn foo3(x: i32, ...);

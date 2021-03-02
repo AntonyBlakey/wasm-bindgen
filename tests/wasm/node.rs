@@ -2,7 +2,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/node.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn test_works();
     static FOO: JsValue;
     fn hit();

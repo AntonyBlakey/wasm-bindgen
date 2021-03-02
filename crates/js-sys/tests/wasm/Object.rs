@@ -5,7 +5,7 @@ use wasm_bindgen::JsCast;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     type Foo42;
     #[wasm_bindgen(method, setter, structural)]
     fn set_foo(this: &Foo42, val: JsValue);
@@ -25,7 +25,7 @@ extern "C" {
 }
 
 #[wasm_bindgen(module = "tests/wasm/Object.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn map_with_symbol_key() -> Object;
     fn symbol_key() -> JsValue;
 

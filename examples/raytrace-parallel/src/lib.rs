@@ -11,7 +11,7 @@ macro_rules! console_log {
 mod pool;
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_namespace = console)]
     fn log(s: &str);
     #[wasm_bindgen(js_namespace = console, js_name = log)]
@@ -119,7 +119,7 @@ pub struct RenderingScene {
 // Inline the definition of `ImageData` here because `web_sys` uses
 // `&Clamped<Vec<u8>>`, whereas we want to pass in a JS object here.
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     pub type ImageData;
 
     #[wasm_bindgen(constructor, catch)]

@@ -23,7 +23,7 @@ macro_rules! stack_closures {
         }
 
         #[allow(non_snake_case)]
-        unsafe extern "C" fn $invoke<$($var: FromWasmAbi,)* R: ReturnWasmAbi>(
+        unsafe extern "wasm-bindgen" fn $invoke<$($var: FromWasmAbi,)* R: ReturnWasmAbi>(
             a: usize,
             b: usize,
             $($var: <$var as FromWasmAbi>::Abi),*
@@ -71,7 +71,7 @@ macro_rules! stack_closures {
         }
 
         #[allow(non_snake_case)]
-        unsafe extern "C" fn $invoke_mut<$($var: FromWasmAbi,)* R: ReturnWasmAbi>(
+        unsafe extern "wasm-bindgen" fn $invoke_mut<$($var: FromWasmAbi,)* R: ReturnWasmAbi>(
             a: usize,
             b: usize,
             $($var: <$var as FromWasmAbi>::Abi),*
@@ -137,7 +137,7 @@ where
 }
 
 #[allow(non_snake_case)]
-unsafe extern "C" fn invoke1_ref<A: RefFromWasmAbi, R: ReturnWasmAbi>(
+unsafe extern "wasm-bindgen" fn invoke1_ref<A: RefFromWasmAbi, R: ReturnWasmAbi>(
     a: usize,
     b: usize,
     arg: <A as RefFromWasmAbi>::Abi,
@@ -188,7 +188,7 @@ where
 }
 
 #[allow(non_snake_case)]
-unsafe extern "C" fn invoke1_mut_ref<A: RefFromWasmAbi, R: ReturnWasmAbi>(
+unsafe extern "wasm-bindgen" fn invoke1_mut_ref<A: RefFromWasmAbi, R: ReturnWasmAbi>(
     a: usize,
     b: usize,
     arg: <A as RefFromWasmAbi>::Abi,

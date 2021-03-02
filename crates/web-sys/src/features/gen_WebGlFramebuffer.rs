@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = :: js_sys :: Object , js_name = WebGLFramebuffer , typescript_type = "WebGLFramebuffer")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `WebGlFramebuffer` class."]

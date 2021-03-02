@@ -18,7 +18,7 @@ dynamically walked on every access.
 
 ```rust
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     type Duck;
 
     #[wasm_bindgen(method, structural)]

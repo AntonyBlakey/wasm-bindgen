@@ -2,12 +2,12 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/vendor_prefix.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn import_me(x: &str);
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(vendor_prefix = webkit)]
     type MySpecialApi;
     #[wasm_bindgen(constructor)]

@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = :: js_sys :: Object , js_name = AudioTrack , typescript_type = "AudioTrack")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `AudioTrack` class."]

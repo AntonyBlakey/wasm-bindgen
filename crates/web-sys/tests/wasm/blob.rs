@@ -6,7 +6,7 @@ use wasm_bindgen_test::*;
 use web_sys::Blob;
 
 #[wasm_bindgen(module = "/tests/wasm/blob.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn new_blob() -> Blob;
 }
 

@@ -3,7 +3,7 @@ use super::*;
 use wasm_bindgen::prelude::*;
 #[cfg(web_sys_unstable_apis)]
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = :: js_sys :: Object , js_name = GPUComputePipeline , typescript_type = "GPUComputePipeline")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `GpuComputePipeline` class."]

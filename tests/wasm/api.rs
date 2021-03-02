@@ -4,7 +4,7 @@ use wasm_bindgen::{self, JsCast};
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/api.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn js_works();
     fn js_eq_works();
     fn assert_null(v: JsValue);
@@ -182,4 +182,4 @@ fn function_table_is() {
 }
 
 #[no_mangle]
-pub extern "C" fn function_table_lookup() {}
+pub extern "wasm-bindgen" fn function_table_lookup() {}

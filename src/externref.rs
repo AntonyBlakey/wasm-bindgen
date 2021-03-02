@@ -9,7 +9,7 @@ use std::cmp::max;
 
 externs! {
     #[link(wasm_import_module = "__wbindgen_externref_xform__")]
-    extern "C" {
+    extern "wasm-bindgen" {
         fn __wbindgen_externref_table_grow(delta: usize) -> i32;
         fn __wbindgen_externref_table_set_null(idx: usize) -> ();
     }
@@ -128,7 +128,7 @@ fn internal_error(msg: &str) -> ! {
 std::thread_local!(pub static HEAP_SLAB: Cell<Slab> = Cell::new(Slab::new()));
 
 #[no_mangle]
-pub extern "C" fn __externref_table_alloc() -> usize {
+pub extern "wasm-bindgen" fn __externref_table_alloc() -> usize {
     HEAP_SLAB
         .try_with(|slot| {
             let mut slab = slot.replace(Slab::new());
@@ -140,7 +140,7 @@ pub extern "C" fn __externref_table_alloc() -> usize {
 }
 
 #[no_mangle]
-pub extern "C" fn __externref_table_dealloc(idx: usize) {
+pub extern "wasm-bindgen" fn __externref_table_dealloc(idx: usize) {
     if idx < super::JSIDX_RESERVED as usize {
         return;
     }
@@ -159,7 +159,7 @@ pub extern "C" fn __externref_table_dealloc(idx: usize) {
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn __externref_drop_slice(ptr: *mut JsValue, len: usize) {
+pub unsafe extern "wasm-bindgen" fn __externref_drop_slice(ptr: *mut JsValue, len: usize) {
     for slot in slice::from_raw_parts_mut(ptr, len) {
         __externref_table_dealloc(slot.idx as usize);
     }
@@ -168,7 +168,7 @@ pub unsafe extern "C" fn __externref_drop_slice(ptr: *mut JsValue, len: usize) {
 // Implementation of `__wbindgen_externref_heap_live_count` for when we are using
 // `externref` instead of the JS `heap`.
 #[no_mangle]
-pub unsafe extern "C" fn __externref_heap_live_count() -> u32 {
+pub unsafe extern "wasm-bindgen" fn __externref_heap_live_count() -> u32 {
     HEAP_SLAB
         .try_with(|slot| {
             let slab = slot.replace(Slab::new());

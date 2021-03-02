@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = SvgElement , extends = Element , extends = Node , extends = EventTarget , extends = :: js_sys :: Object , js_name = SVGFEComponentTransferElement , typescript_type = "SVGFEComponentTransferElement")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `SvgfeComponentTransferElement` class."]

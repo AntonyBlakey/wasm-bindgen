@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = CssRule , extends = :: js_sys :: Object , js_name = CSSCounterStyleRule , typescript_type = "CSSCounterStyleRule")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `CssCounterStyleRule` class."]

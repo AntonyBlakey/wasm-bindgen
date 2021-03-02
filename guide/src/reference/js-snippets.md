@@ -10,7 +10,7 @@ To include a local JS file, you'll use the `#[wasm_bindgen(module)]` macro:
 
 ```rust
 #[wasm_bindgen(module = "/js/foo.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn add(a: u32, b: u32) -> u32;
 }
 ```
@@ -43,7 +43,7 @@ ability to use the `inline_js` attribute:
 
 ```rust
 #[wasm_bindgen(inline_js = "export function add(a, b) { return a + b; }")]
-extern "C" {
+extern "wasm-bindgen" {
     fn add(a: u32, b: u32) -> u32;
 }
 ```

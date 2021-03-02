@@ -3,7 +3,7 @@ pub mod css {
     use super::super::*;
     use wasm_bindgen::prelude::*;
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         # [wasm_bindgen (js_namespace = CSS , js_name = escape)]
         #[doc = "The `CSS.escape()` function."]
         #[doc = ""]

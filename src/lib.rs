@@ -24,10 +24,10 @@ macro_rules! if_std {
 }
 
 macro_rules! externs {
-    ($(#[$attr:meta])* extern "C" { $(fn $name:ident($($args:tt)*) -> $ret:ty;)* }) => (
+    ($(#[$attr:meta])* extern "wasm-bindgen" { $(fn $name:ident($($args:tt)*) -> $ret:ty;)* }) => (
         #[cfg(all(target_arch = "wasm32", not(target_os = "emscripten")))]
         $(#[$attr])*
-        extern "C" {
+        extern "wasm-bindgen" {
             $(fn $name($($args)*) -> $ret;)*
         }
 
@@ -486,7 +486,7 @@ numbers! { i8 u8 i16 u16 i32 u32 f32 f64 }
 
 externs! {
     #[link(wasm_import_module = "__wbindgen_placeholder__")]
-    extern "C" {
+    extern "wasm-bindgen" {
         fn __wbindgen_object_clone_ref(idx: u32) -> u32;
         fn __wbindgen_object_drop_ref(idx: u32) -> ();
 
@@ -577,7 +577,7 @@ impl Drop for JsValue {
 ///
 /// ```ignore
 /// #[wasm_bindgen]
-/// extern "C" {
+/// extern "wasm-bindgen" {
 ///     static console: JsValue;
 /// }
 /// ```
@@ -971,7 +971,7 @@ pub mod __rt {
         use std::mem;
 
         #[no_mangle]
-        pub extern "C" fn __wbindgen_malloc(size: usize) -> *mut u8 {
+        pub extern "wasm-bindgen" fn __wbindgen_malloc(size: usize) -> *mut u8 {
             let align = mem::align_of::<usize>();
             if let Ok(layout) = Layout::from_size_align(size, align) {
                 unsafe {
@@ -990,7 +990,7 @@ pub mod __rt {
         }
 
         #[no_mangle]
-        pub unsafe extern "C" fn __wbindgen_realloc(ptr: *mut u8, old_size: usize, new_size: usize) -> *mut u8 {
+        pub unsafe extern "wasm-bindgen" fn __wbindgen_realloc(ptr: *mut u8, old_size: usize, new_size: usize) -> *mut u8 {
             let align = mem::align_of::<usize>();
             debug_assert!(old_size > 0);
             debug_assert!(new_size > 0);
@@ -1013,7 +1013,7 @@ pub mod __rt {
         }
 
         #[no_mangle]
-        pub unsafe extern "C" fn __wbindgen_free(ptr: *mut u8, size: usize) {
+        pub unsafe extern "wasm-bindgen" fn __wbindgen_free(ptr: *mut u8, size: usize) {
             // This happens for zero-length slices, and in that case `ptr` is
             // likely bogus so don't actually send this to the system allocator
             if size == 0 {
@@ -1065,7 +1065,7 @@ pub mod __rt {
     static mut GLOBAL_EXNDATA: [u32; 2] = [0; 2];
 
     #[no_mangle]
-    pub unsafe extern "C" fn __wbindgen_exn_store(idx: u32) {
+    pub unsafe extern "wasm-bindgen" fn __wbindgen_exn_store(idx: u32) {
         debug_assert_eq!(GLOBAL_EXNDATA[0], 0);
         GLOBAL_EXNDATA[0] = 1;
         GLOBAL_EXNDATA[1] = idx;

@@ -6,7 +6,7 @@ use wasm_bindgen::JsCast;
 use web_sys::Node;
 
 #[wasm_bindgen(raw_module = "../globals.js")]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_name = jsthunk)]
     fn js_thunk();
     #[wasm_bindgen(js_name = add)]
@@ -99,7 +99,7 @@ pub fn call_doesnt_throw_with_catch_n_times(n: usize) {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     pub type Element;
 
     #[wasm_bindgen(method, js_name = firstChild, final, getter)]

@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = AudioNode , extends = EventTarget , extends = :: js_sys :: Object , js_name = StereoPannerNode , typescript_type = "StereoPannerNode")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `StereoPannerNode` class."]

@@ -3,7 +3,7 @@ use wasm_bindgen_test::*;
 use web_sys::Headers;
 
 #[wasm_bindgen(module = "/tests/wasm/headers.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn new_headers() -> Headers;
 }
 

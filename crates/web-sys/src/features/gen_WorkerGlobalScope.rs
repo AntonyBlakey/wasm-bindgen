@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = EventTarget , extends = :: js_sys :: Object , js_name = WorkerGlobalScope , typescript_type = "WorkerGlobalScope")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `WorkerGlobalScope` class."]

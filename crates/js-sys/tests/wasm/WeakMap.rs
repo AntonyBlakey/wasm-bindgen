@@ -4,7 +4,7 @@ use wasm_bindgen::JsCast;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     type SomeKey;
     #[wasm_bindgen(method, setter, structural)]
     fn set_some(this: &SomeKey, val: JsValue);

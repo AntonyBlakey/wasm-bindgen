@@ -538,7 +538,7 @@ fn array_inheritance() {
 }
 
 #[wasm_bindgen(module = "tests/wasm/Array.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn populate_array(arr: JsValue, start: JsValue, len: JsValue) -> JsValue;
 }
 

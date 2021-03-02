@@ -4,7 +4,7 @@ use wasm_bindgen::prelude::*;
 pub fn foo() -> &u32 {}
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn foo(Foo(x): Foo);
 
     fn foo() -> &u32;

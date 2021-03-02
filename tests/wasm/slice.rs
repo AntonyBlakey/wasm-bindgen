@@ -3,7 +3,7 @@ use wasm_bindgen::Clamped;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/slice.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn js_export();
 
     fn js_import();
@@ -54,7 +54,7 @@ fn export() {
 macro_rules! import_macro {
     ($(($rust:ident, $js:ident, $i:ident))*) => ($(
         #[wasm_bindgen(module = "tests/wasm/slice.js")]
-        extern "C" {
+        extern "wasm-bindgen" {
             fn $js(a: &[$i], b: Option<&[$i]>, c: Option<&[$i]>) -> Vec<$i>;
         }
 
@@ -119,7 +119,7 @@ macro_rules! import_mut_macro {
     ($(($rust:ident, $js:ident, $i:ident))*) => (
         $(
             #[wasm_bindgen(module = "tests/wasm/slice.js")]
-            extern "C" {
+            extern "wasm-bindgen" {
                 fn $js(a: &mut [$i], b: Option<&mut [$i]>, c: Option<&mut [$i]>);
             }
 

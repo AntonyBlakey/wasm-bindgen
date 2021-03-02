@@ -2,7 +2,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/rethrow.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn call_throw_one();
     fn call_ok();
 }

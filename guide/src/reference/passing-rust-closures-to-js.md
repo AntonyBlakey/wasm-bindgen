@@ -18,7 +18,7 @@ dyn FnMut` trait objects:
 // Import JS functions that take closures
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn takes_immutable_closure(f: &dyn Fn());
 
     fn takes_mutable_closure(f: &mut dyn FnMut());
@@ -44,7 +44,7 @@ Closures also support arguments and return values like exports do, for example:
 
 ```rust
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn takes_closure_that_takes_int_and_returns_string(x: &dyn Fn(u32) -> String);
 }
 
@@ -80,7 +80,7 @@ as arguments and returns.
 
 ```rust
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn setInterval(closure: &Closure<dyn FnMut()>, millis: u32) -> f64;
     fn cancelInterval(token: f64);
 

@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = SvgGradientElement , extends = SvgElement , extends = Element , extends = Node , extends = EventTarget , extends = :: js_sys :: Object , js_name = SVGRadialGradientElement , typescript_type = "SVGRadialGradientElement")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `SvgRadialGradientElement` class."]

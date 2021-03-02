@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = Document , extends = Node , extends = EventTarget , extends = :: js_sys :: Object , js_name = XMLDocument , typescript_type = "XMLDocument")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `XmlDocument` class."]

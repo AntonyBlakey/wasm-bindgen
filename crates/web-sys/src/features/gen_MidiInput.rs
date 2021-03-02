@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = MidiPort , extends = EventTarget , extends = :: js_sys :: Object , js_name = MIDIInput , typescript_type = "MIDIInput")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `MidiInput` class."]

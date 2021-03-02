@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = CharacterData , extends = Node , extends = EventTarget , extends = :: js_sys :: Object , js_name = Text , typescript_type = "Text")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `Text` class."]

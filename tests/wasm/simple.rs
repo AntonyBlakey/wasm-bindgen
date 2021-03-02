@@ -3,7 +3,7 @@ use wasm_bindgen::{intern, unintern, JsCast};
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/simple.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn test_add();
     fn test_string_arguments();
     fn test_return_a_string();
@@ -112,7 +112,7 @@ fn other_exports() {
 }
 
 #[no_mangle]
-pub extern "C" fn foo(_a: u32) {}
+pub extern "wasm-bindgen" fn foo(_a: u32) {}
 
 #[wasm_bindgen_test]
 fn jsvalue_typeof() {
@@ -135,7 +135,7 @@ pub fn is_string(val: &JsValue) -> bool {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[derive(Clone)]
     type Array;
     #[wasm_bindgen(constructor)]

@@ -3,7 +3,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/enums.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn js_c_style_enum();
     fn js_c_style_enum_with_custom_values();
     fn js_handle_optional_enums(x: Option<Color>) -> Option<Color>;

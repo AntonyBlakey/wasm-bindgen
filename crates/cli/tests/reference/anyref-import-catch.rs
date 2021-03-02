@@ -3,7 +3,7 @@
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(catch)]
     fn foo() -> Result<(), JsValue>;
 }

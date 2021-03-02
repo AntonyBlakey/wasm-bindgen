@@ -10,7 +10,7 @@ use web_sys::{
 #[wasm_bindgen(
     inline_js = "export function is_unified_avail() { return Object.keys(RTCRtpTransceiver.prototype).indexOf('currentDirection')>-1; }"
 )]
-extern "C" {
+extern "wasm-bindgen" {
     /// Available in FF since forever, in Chrome since 72, in Safari since 12.1
     fn is_unified_avail() -> bool;
 }

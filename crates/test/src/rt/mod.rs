@@ -184,7 +184,7 @@ trait Formatter {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_namespace = console, js_name = log)]
     #[doc(hidden)]
     pub fn js_console_log(s: &str);
@@ -552,7 +552,7 @@ struct TestFuture<F> {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(catch)]
     fn __wbg_test_invoke(f: &mut dyn FnMut()) -> Result<(), JsValue>;
 }

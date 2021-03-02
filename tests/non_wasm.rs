@@ -29,7 +29,7 @@ pub fn foo(x: bool) {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn some_import();
     static A: JsValue;
 }

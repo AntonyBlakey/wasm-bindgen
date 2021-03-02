@@ -4,7 +4,7 @@ use wasm_bindgen::JsCast;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/Generator.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn one_two_generator() -> Generator;
     fn dummy_generator() -> Generator;
     fn broken_generator() -> Generator;

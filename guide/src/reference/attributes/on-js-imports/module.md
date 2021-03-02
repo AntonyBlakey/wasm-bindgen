@@ -5,7 +5,7 @@ example,
 
 ```rust
 #[wasm_bindgen(module = "wu/tang/clan")]
-extern "C" {
+extern "wasm-bindgen" {
     type ThirtySixChambers;
 }
 ```
@@ -21,7 +21,7 @@ instead. For example,
 
 ```rust
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn illmatic() -> u32;
 }
 ```

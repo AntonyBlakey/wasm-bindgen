@@ -2,7 +2,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(raw_module = "./tests/headless/modules.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn get_five() -> u32;
 }
 

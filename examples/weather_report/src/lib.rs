@@ -15,7 +15,7 @@ use web_sys::Element;
 use web_sys::HtmlInputElement;
 
 #[wasm_bindgen(module = "/util.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn initialize(lat: f64, lon: f64);
 }
 

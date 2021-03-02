@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = SvgGraphicsElement , extends = SvgElement , extends = Element , extends = Node , extends = EventTarget , extends = :: js_sys :: Object , js_name = SVGUseElement , typescript_type = "SVGUseElement")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `SvgUseElement` class."]

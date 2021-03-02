@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = :: js_sys :: Object , js_name = SVGAnimatedLengthList , typescript_type = "SVGAnimatedLengthList")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `SvgAnimatedLengthList` class."]

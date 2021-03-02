@@ -8,7 +8,7 @@ name (like a class or function name) it'll be accessed through this namespace.
 
 ```rust
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_namespace = console)]
     fn log(s: &str);
     
@@ -30,7 +30,7 @@ It is also possible to access the JavaScript object under the nested namespace.
 
 ```rust
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_namespace = ["window", "document"])]
     fn write(s: &str);
 }

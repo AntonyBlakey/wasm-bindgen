@@ -3,7 +3,7 @@ pub mod console {
     use super::super::*;
     use wasm_bindgen::prelude::*;
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         # [wasm_bindgen (js_namespace = console , js_name = assert)]
         #[doc = "The `console.assert()` function."]
         #[doc = ""]

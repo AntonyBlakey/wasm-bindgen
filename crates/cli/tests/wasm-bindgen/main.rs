@@ -143,12 +143,12 @@ fn namespace_global_and_noglobal_works() {
             r#"
                 use wasm_bindgen::prelude::*;
                 #[wasm_bindgen(module = "fs")]
-                extern "C" {
+                extern "wasm-bindgen" {
                     #[wasm_bindgen(js_namespace = window)]
                     fn t1();
                 }
                 #[wasm_bindgen]
-                extern "C" {
+                extern "wasm-bindgen" {
                     #[wasm_bindgen(js_namespace = window)]
                     fn t2();
                 }
@@ -188,7 +188,7 @@ fn bin_crate_works() {
             r#"
                 use wasm_bindgen::prelude::*;
                 #[wasm_bindgen]
-                extern "C" {
+                extern "wasm-bindgen" {
                     #[wasm_bindgen(js_namespace = console)]
                     fn log(data: &str);
                 }
@@ -318,7 +318,7 @@ fn bad_interface_types_import() -> anyhow::Result<()> {
                 use wasm_bindgen::prelude::*;
 
                 #[wasm_bindgen]
-                extern "C" {
+                extern "wasm-bindgen" {
                     pub fn foo() -> Vec<u8>;
                 }
 

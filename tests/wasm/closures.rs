@@ -6,7 +6,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/closures.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn works_call(a: &dyn Fn());
     fn works_thread(a: &dyn Fn(u32) -> u32) -> u32;
 
@@ -480,7 +480,7 @@ pub struct RefFirstArgument {
 #[wasm_bindgen_test]
 fn reference_as_first_argument_builds_at_all() {
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         fn ref_first_arg1(a: &dyn Fn(&JsValue));
         fn ref_first_arg2(a: &mut dyn FnMut(&JsValue));
         fn ref_first_arg3(a: &Closure<dyn Fn(&JsValue)>);

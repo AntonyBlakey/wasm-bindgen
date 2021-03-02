@@ -3,7 +3,7 @@ use wasm_bindgen_test::*;
 use web_sys::{HtmlButtonElement, HtmlFormElement, Node};
 
 #[wasm_bindgen(module = "/tests/wasm/element.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn new_button() -> HtmlButtonElement;
     fn new_form() -> HtmlFormElement;
 }

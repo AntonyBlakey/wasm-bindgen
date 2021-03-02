@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = :: js_sys :: Object , js_name = BarProp , typescript_type = "BarProp")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `BarProp` class."]

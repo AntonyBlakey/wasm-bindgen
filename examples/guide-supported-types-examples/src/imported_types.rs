@@ -21,7 +21,7 @@ pub struct Struct {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     pub type SomeJsType;
 }
 

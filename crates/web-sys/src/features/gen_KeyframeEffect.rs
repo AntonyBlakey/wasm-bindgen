@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = AnimationEffect , extends = :: js_sys :: Object , js_name = KeyframeEffect , typescript_type = "KeyframeEffect")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `KeyframeEffect` class."]

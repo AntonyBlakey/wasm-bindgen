@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = TextTrackCue , extends = EventTarget , extends = :: js_sys :: Object , js_name = VTTCue , typescript_type = "VTTCue")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `VttCue` class."]

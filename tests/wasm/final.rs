@@ -2,14 +2,14 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     type Math;
     #[wasm_bindgen(static_method_of = Math, final)]
     fn log(f: f32) -> f32;
 }
 
 #[wasm_bindgen(module = "tests/wasm/final.js")]
-extern "C" {
+extern "wasm-bindgen" {
     type MyType;
     #[wasm_bindgen(constructor, final)]
     fn new(x: u32) -> MyType;

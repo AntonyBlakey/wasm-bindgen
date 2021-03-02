@@ -4,7 +4,7 @@ use wasm_bindgen_futures::JsFuture;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/Symbol.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn test_has_instance(sym: &Symbol);
     fn test_is_concat_spreadable(sym: &Symbol);
     fn test_iterator(sym: &Symbol);
@@ -19,7 +19,7 @@ extern "C" {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_name = Symbol)]
     fn gensym(val: JsValue) -> Symbol;
 }

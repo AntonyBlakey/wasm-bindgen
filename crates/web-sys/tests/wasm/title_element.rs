@@ -3,7 +3,7 @@ use wasm_bindgen_test::*;
 use web_sys::HtmlTitleElement;
 
 #[wasm_bindgen(module = "/tests/wasm/element.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn new_title() -> HtmlTitleElement;
 }
 

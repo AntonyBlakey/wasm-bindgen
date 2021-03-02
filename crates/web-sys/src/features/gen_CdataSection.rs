@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = Text , extends = CharacterData , extends = Node , extends = EventTarget , extends = :: js_sys :: Object , js_name = CDATASection , typescript_type = "CDATASection")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `CdataSection` class."]

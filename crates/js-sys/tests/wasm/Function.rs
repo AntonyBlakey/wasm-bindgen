@@ -4,7 +4,7 @@ use wasm_bindgen::JsCast;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_name = max, js_namespace = Math)]
     static MAX: Function;
 
@@ -31,7 +31,7 @@ fn apply() {
 }
 
 #[wasm_bindgen(module = "tests/wasm/Function.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn get_function_to_bind() -> Function;
     fn get_value_to_bind_to() -> JsValue;
     fn list() -> Function;

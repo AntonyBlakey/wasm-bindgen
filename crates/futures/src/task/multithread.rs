@@ -170,7 +170,7 @@ fn wait_async(ptr: &AtomicI32, current_value: i32) -> js_sys::Promise {
     };
 
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         type Atomics;
 
         #[wasm_bindgen(static_method_of = Atomics, js_name = waitAsync)]

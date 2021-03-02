@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = HtmlCollection , extends = :: js_sys :: Object , js_name = HTMLFormControlsCollection , typescript_type = "HTMLFormControlsCollection")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `HtmlFormControlsCollection` class."]

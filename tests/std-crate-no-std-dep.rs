@@ -9,7 +9,7 @@ extern crate wasm_bindgen;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn test(a: &str);
 
     type Js;

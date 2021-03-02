@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = EventTarget , extends = :: js_sys :: Object , js_name = MIDIAccess , typescript_type = "MIDIAccess")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `MidiAccess` class."]

@@ -11,12 +11,12 @@ use wasm_bindgen_test::*;
 wasm_bindgen_test_configure!(run_in_browser);
 
 #[wasm_bindgen(module = "/tests/headless.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn is_array_values_supported() -> bool;
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     type ValuesIterator;
     #[wasm_bindgen(method, structural)]
     fn next(this: &ValuesIterator) -> IterNext;

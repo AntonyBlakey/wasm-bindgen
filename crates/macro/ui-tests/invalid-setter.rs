@@ -2,7 +2,7 @@
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     type A;
 
     #[wasm_bindgen(setter, method)]

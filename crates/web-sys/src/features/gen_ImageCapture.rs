@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = EventTarget , extends = :: js_sys :: Object , js_name = ImageCapture , typescript_type = "ImageCapture")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `ImageCapture` class."]

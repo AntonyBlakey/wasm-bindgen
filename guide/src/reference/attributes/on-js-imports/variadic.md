@@ -28,7 +28,7 @@ function as variadic:
 
 ```rust
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(variadic)]
     fn sum(args: &[i32]) -> i32;
 }

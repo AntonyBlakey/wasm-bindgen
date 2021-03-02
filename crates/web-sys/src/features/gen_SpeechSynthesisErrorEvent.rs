@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = SpeechSynthesisEvent , extends = Event , extends = :: js_sys :: Object , js_name = SpeechSynthesisErrorEvent , typescript_type = "SpeechSynthesisErrorEvent")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `SpeechSynthesisErrorEvent` class."]

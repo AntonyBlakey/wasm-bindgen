@@ -3,7 +3,7 @@ use wasm_bindgen_test::*;
 
 #[rustfmt::skip]
 #[wasm_bindgen(module = "tests/wasm/futures.js")]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(catch)]
     async fn call_exports() -> Result<JsValue, JsValue>;
 

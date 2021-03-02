@@ -3,7 +3,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/Reflect.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn get_char_at() -> Function;
 
     #[wasm_bindgen(js_name = Rectangle)]
@@ -26,7 +26,7 @@ extern "C" {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_name = prototype, js_namespace = Object)]
     static OBJECT_PROTOTYPE: JsValue;
     #[wasm_bindgen(js_name = prototype, js_namespace = Array)]

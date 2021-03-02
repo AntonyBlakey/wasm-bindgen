@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = AudioScheduledSourceNode , extends = AudioNode , extends = EventTarget , extends = :: js_sys :: Object , js_name = OscillatorNode , typescript_type = "OscillatorNode")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `OscillatorNode` class."]

@@ -4,7 +4,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/getters_and_setters.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn _1_js(rules: Rules) -> Rules;
     fn _2_js(rules: Rules) -> Rules;
     fn _3_js(rules: Rules) -> Rules;

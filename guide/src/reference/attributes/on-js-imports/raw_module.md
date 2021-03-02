@@ -6,7 +6,7 @@ paths starting with `./`, `../`, or `/` as JS snippets. For example:
 
 ```rust
 #[wasm_bindgen(raw_module = "./some/js/file.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn the_function();
 }
 ```

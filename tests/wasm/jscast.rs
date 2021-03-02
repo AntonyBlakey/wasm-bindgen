@@ -3,7 +3,7 @@ use wasm_bindgen::JsCast;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/jscast.js")]
-extern "C" {
+extern "wasm-bindgen" {
     type JsCast1;
     #[wasm_bindgen(constructor)]
     fn new() -> JsCast1;

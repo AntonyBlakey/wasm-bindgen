@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = :: js_sys :: Object , js_name = CanvasRenderingContext2D , typescript_type = "CanvasRenderingContext2D")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `CanvasRenderingContext2d` class."]

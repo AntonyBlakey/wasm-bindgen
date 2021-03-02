@@ -3,7 +3,7 @@ use super::*;
 use wasm_bindgen::prelude::*;
 #[cfg(web_sys_unstable_apis)]
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = XrReferenceSpace , extends = XrSpace , extends = EventTarget , extends = :: js_sys :: Object , js_name = XRBoundedReferenceSpace , typescript_type = "XRBoundedReferenceSpace")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `XrBoundedReferenceSpace` class."]

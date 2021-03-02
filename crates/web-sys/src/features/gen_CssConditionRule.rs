@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = CssGroupingRule , extends = CssRule , extends = :: js_sys :: Object , js_name = CSSConditionRule , typescript_type = "CSSConditionRule")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `CssConditionRule` class."]

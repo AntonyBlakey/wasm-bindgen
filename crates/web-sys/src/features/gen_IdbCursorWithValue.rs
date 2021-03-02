@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = IdbCursor , extends = :: js_sys :: Object , js_name = IDBCursorWithValue , typescript_type = "IDBCursorWithValue")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `IdbCursorWithValue` class."]

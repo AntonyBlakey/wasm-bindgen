@@ -7,7 +7,7 @@
 //!
 //! ```
 //! #[no_mangle]
-//! pub extern "C" fn pair(a: u32, b: u32) -> [u32; 2] {
+//! pub extern "wasm-bindgen" fn pair(a: u32, b: u32) -> [u32; 2] {
 //!     [a, b]
 //! }
 //! ```

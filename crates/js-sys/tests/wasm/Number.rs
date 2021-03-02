@@ -6,7 +6,7 @@ use wasm_bindgen::JsCast;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/Number.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn const_epsilon() -> f64;
     fn const_max_safe_integer() -> f64;
     fn const_max_value() -> f64;

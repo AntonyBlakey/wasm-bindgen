@@ -1,7 +1,7 @@
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "/defined-in-js.js")]
-extern "C" {
+extern "wasm-bindgen" {
     type MyClass;
 
     #[wasm_bindgen(constructor)]
@@ -17,17 +17,17 @@ extern "C" {
 
 // lifted from the `console_log` example
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_namespace = console)]
     fn log(s: &str);
 }
 
 #[wasm_bindgen(inline_js = "export function add(a, b) { return a + b; }")]
-extern "C" {
+extern "wasm-bindgen" {
     fn add(a: u32, b: u32) -> u32;
 }
 #[wasm_bindgen(inline_js = "export function test() {}")]
-extern "C" {
+extern "wasm-bindgen" {
     fn test();
 }
 

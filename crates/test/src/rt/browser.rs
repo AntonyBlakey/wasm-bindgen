@@ -15,7 +15,7 @@ pub struct Browser {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     type HTMLDocument;
     static document: HTMLDocument;
     #[wasm_bindgen(method, structural)]

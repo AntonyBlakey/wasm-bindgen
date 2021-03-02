@@ -4,7 +4,7 @@ use wasm_bindgen_futures::JsFuture;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/WebAssembly.js")]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_name = getWasmArray)]
     fn get_wasm_array() -> Uint8Array;
 

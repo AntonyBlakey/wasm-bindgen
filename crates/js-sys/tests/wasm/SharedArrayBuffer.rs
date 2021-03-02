@@ -4,7 +4,7 @@ use wasm_bindgen::JsCast;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/SharedArrayBuffer.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn is_shared_array_buffer_supported() -> bool;
 }
 

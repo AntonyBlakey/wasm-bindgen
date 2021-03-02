@@ -3,7 +3,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn assert_dict_c(c: &C);
     #[wasm_bindgen(js_name = assert_dict_c)]
     fn assert_dict_c2(c: C);

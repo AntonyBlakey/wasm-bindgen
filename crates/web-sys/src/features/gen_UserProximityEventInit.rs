@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = :: js_sys :: Object , js_name = UserProximityEventInit)]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `UserProximityEventInit` dictionary."]

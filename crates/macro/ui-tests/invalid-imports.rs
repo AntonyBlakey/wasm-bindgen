@@ -1,7 +1,7 @@
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     type A;
 
     fn f() -> &'static u32;

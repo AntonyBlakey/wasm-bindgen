@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = GamepadEvent , extends = Event , extends = :: js_sys :: Object , js_name = GamepadAxisMoveEvent , typescript_type = "GamepadAxisMoveEvent")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `GamepadAxisMoveEvent` class."]

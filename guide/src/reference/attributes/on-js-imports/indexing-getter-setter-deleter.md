@@ -58,7 +58,7 @@ on methods:
 
 ```rust
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     type Foo;
     static foo: Foo;
 

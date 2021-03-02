@@ -5,7 +5,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/classes.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn js_simple();
     fn js_strings();
     fn js_exceptions();

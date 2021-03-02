@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = :: js_sys :: Object , js_name = Response , typescript_type = "Response")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `Response` class."]

@@ -2,7 +2,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/imports.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn test_simple();
 
     fn simple_foo(s: &str);
@@ -84,7 +84,7 @@ extern "C" {
 }
 
 #[wasm_bindgen(module = "tests/wasm/imports_2.js")]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_name = "same_name_from_import")]
     fn same_name_from_import_2(s: i32) -> i32;
 
@@ -93,7 +93,7 @@ extern "C" {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn parseInt(a: &str) -> u32;
 
     #[wasm_bindgen(js_namespace = Math, js_name = "sqrt")]
@@ -227,7 +227,7 @@ fn dead_imports_not_generated() {
 #[cfg(feature = "nightly")]
 fn import_inside_function_works() {
     #[wasm_bindgen(module = "tests/wasm/imports.js")]
-    extern "C" {
+    extern "wasm-bindgen" {
         fn import_inside_function_works();
     }
     import_inside_function_works();
@@ -245,7 +245,7 @@ mod private {
 
     pub fn foo() {
         #[wasm_bindgen(module = "tests/wasm/imports.js")]
-        extern "C" {
+        extern "wasm-bindgen" {
             fn import_inside_private_module();
         }
         import_inside_private_module();
@@ -253,7 +253,7 @@ mod private {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn something_not_defined_in_the_environment();
 
     type TypeThatIsNotDefined;

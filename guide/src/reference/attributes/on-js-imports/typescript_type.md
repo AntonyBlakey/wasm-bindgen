@@ -8,7 +8,7 @@ all TypeScript types.
 
 ```rust
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(typescript_type = "Foo")]
     type Foo;
 }

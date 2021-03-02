@@ -9,7 +9,7 @@ use wasm_bindgen::prelude::*;
 pub struct Node {}
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     // Not using `js_sys::Error` because node's errors specifically have a
     // `stack` attribute.
     type NodeError;

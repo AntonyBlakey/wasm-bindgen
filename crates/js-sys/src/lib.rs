@@ -46,7 +46,7 @@ use wasm_bindgen::JsCast;
 //   by reference.
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// The `decodeURI()` function decodes a Uniform Resource Identifier (URI)
     /// previously created by `encodeURI` or by a similar routine.
     ///
@@ -126,7 +126,7 @@ extern "C" {
 
 // Array
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, is_type_of = Array::is_array, typescript_type = "Array<any>")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type Array;
@@ -502,7 +502,7 @@ where
 
 // ArrayBuffer
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, typescript_type = "ArrayBuffer")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type ArrayBuffer;
@@ -552,7 +552,7 @@ extern "C" {
 
 // SharedArrayBuffer
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, typescript_type = "SharedArrayBuffer")]
     #[derive(Clone, Debug)]
     pub type SharedArrayBuffer;
@@ -592,7 +592,7 @@ extern "C" {
 
 // Array Iterator
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// The `keys()` method returns a new Array Iterator object that contains the
     /// keys for each index in the array.
     ///
@@ -629,7 +629,7 @@ pub mod Atomics {
     use super::*;
 
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The static `Atomics.add()` method adds a given value at a given
         /// position in the array and returns the old value at that position.
         /// This atomic operation guarantees that no other write happens
@@ -768,7 +768,7 @@ pub mod Atomics {
 
 // Boolean
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, is_type_of = |v| v.as_bool().is_some(), typescript_type = "boolean")]
     #[derive(Clone, PartialEq, Eq)]
     pub type Boolean;
@@ -817,7 +817,7 @@ impl fmt::Debug for Boolean {
 
 // DataView
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, typescript_type = "DataView")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type DataView;
@@ -1049,7 +1049,7 @@ extern "C" {
 
 // Error
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, typescript_type = "Error")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type Error;
@@ -1088,7 +1088,7 @@ extern "C" {
 
 // EvalError
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, extends = Error, typescript_type = "EvalError")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type EvalError;
@@ -1104,7 +1104,7 @@ extern "C" {
 
 // Function
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, is_type_of = JsValue::is_function, typescript_type = "Function")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type Function;
@@ -1253,7 +1253,7 @@ impl Function {
 
 // Generator
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, typescript_type = "Generator<any, any, any>")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type Generator;
@@ -1281,7 +1281,7 @@ extern "C" {
 
 // Map
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, typescript_type = "Map<any, any>")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type Map;
@@ -1350,7 +1350,7 @@ extern "C" {
 
 // Map Iterator
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// The `entries()` method returns a new Iterator object that contains
     /// the [key, value] pairs for each element in the Map object in
     /// insertion order.
@@ -1376,7 +1376,7 @@ extern "C" {
 
 // Iterator
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// Any object that conforms to the JS iterator protocol. For example,
     /// something returned by `myArray[Symbol.iterator]()`.
     ///
@@ -1396,7 +1396,7 @@ extern "C" {
 impl Iterator {
     fn looks_like_iterator(it: &JsValue) -> bool {
         #[wasm_bindgen]
-        extern "C" {
+        extern "wasm-bindgen" {
             type MaybeIterator;
 
             #[wasm_bindgen(method, getter)]
@@ -1415,7 +1415,7 @@ impl Iterator {
 
 // Async Iterator
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// Any object that conforms to the JS async iterator protocol. For example,
     /// something returned by `myObject[Symbol.asyncIterator]()`.
     ///
@@ -1538,7 +1538,7 @@ pub fn try_iter(val: &JsValue) -> Result<Option<IntoIter>, JsValue> {
 
 // IteratorNext
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// The result of calling `next()` on a JS iterator.
     ///
     /// [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
@@ -1568,7 +1568,7 @@ pub mod Math {
 
     // Math
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `Math.abs()` function returns the absolute value of a number, that is
         /// Math.abs(x) = |x|
         ///
@@ -1813,7 +1813,7 @@ pub mod Math {
 
 // Number.
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, is_type_of = |v| v.as_f64().is_some(), typescript_type = "number")]
     #[derive(Clone)]
     pub type Number;
@@ -1982,7 +1982,7 @@ impl fmt::Debug for Number {
 
 // Date.
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, typescript_type = "Date")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type Date;
@@ -2424,7 +2424,7 @@ extern "C" {
 
 // Object.
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(typescript_type = "object")]
     #[derive(Clone, Debug)]
     pub type Object;
@@ -2692,7 +2692,7 @@ impl Eq for Object {}
 
 // Proxy
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(typescript_type = "ProxyConstructor")]
     #[derive(Clone, Debug)]
     pub type Proxy;
@@ -2715,7 +2715,7 @@ extern "C" {
 
 // RangeError
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// The `RangeError` object indicates an error when a value is not in the set
     /// or range of allowed values.
     ///
@@ -2734,7 +2734,7 @@ extern "C" {
 
 // ReferenceError
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// The `ReferenceError` object represents an error when a non-existent
     /// variable is referenced.
     ///
@@ -2757,7 +2757,7 @@ pub mod Reflect {
 
     // Reflect
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The static `Reflect.apply()` method calls a target function with
         /// arguments as specified.
         ///
@@ -2929,7 +2929,7 @@ pub mod Reflect {
 
 // RegExp
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, typescript_type = "RegExp")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type RegExp;
@@ -3106,7 +3106,7 @@ extern "C" {
 
 // Set
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, typescript_type = "Set<any>")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type Set;
@@ -3162,7 +3162,7 @@ extern "C" {
 
 // SetIterator
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// The `entries()` method returns a new Iterator object that contains an
     /// array of [value, value] for each element in the Set object, in insertion
     /// order. For Set objects there is no key like in Map objects. However, to
@@ -3191,7 +3191,7 @@ extern "C" {
 
 // SyntaxError
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// A `SyntaxError` is thrown when the JavaScript engine encounters tokens or
     /// token order that does not conform to the syntax of the language when
     /// parsing code.
@@ -3212,7 +3212,7 @@ extern "C" {
 
 // TypeError
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// The `TypeError` object represents an error when a value is not of the
     /// expected type.
     ///
@@ -3231,7 +3231,7 @@ extern "C" {
 
 // URIError
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// The `URIError` object represents an error when a global URI handling
     /// function was used in a wrong way.
     ///
@@ -3250,7 +3250,7 @@ extern "C" {
 
 // WeakMap
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, typescript_type = "WeakMap<object, any>")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type WeakMap;
@@ -3294,7 +3294,7 @@ extern "C" {
 
 // WeakSet
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(extends = Object, typescript_type = "WeakSet<object>")]
     #[derive(Clone, Debug, PartialEq, Eq)]
     pub type WeakSet;
@@ -3332,7 +3332,7 @@ pub mod WebAssembly {
 
     // WebAssembly
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `WebAssembly.compile()` function compiles a `WebAssembly.Module`
         /// from WebAssembly binary code.  This function is useful if it is
         /// necessary to a compile a module before it can be instantiated
@@ -3376,7 +3376,7 @@ pub mod WebAssembly {
 
     // WebAssembly.CompileError
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `WebAssembly.CompileError()` constructor creates a new
         /// WebAssembly `CompileError` object, which indicates an error during
         /// WebAssembly decoding or validation.
@@ -3397,7 +3397,7 @@ pub mod WebAssembly {
 
     // WebAssembly.Instance
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// A `WebAssembly.Instance` object is a stateful, executable instance
         /// of a `WebAssembly.Module`. Instance objects contain all the exported
         /// WebAssembly functions that allow calling into WebAssembly code from
@@ -3429,7 +3429,7 @@ pub mod WebAssembly {
 
     // WebAssembly.LinkError
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `WebAssembly.LinkError()` constructor creates a new WebAssembly
         /// LinkError object, which indicates an error during module
         /// instantiation (besides traps from the start function).
@@ -3450,7 +3450,7 @@ pub mod WebAssembly {
 
     // WebAssembly.RuntimeError
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `WebAssembly.RuntimeError()` constructor creates a new WebAssembly
         /// `RuntimeError` object — the type that is thrown whenever WebAssembly
         /// specifies a trap.
@@ -3471,7 +3471,7 @@ pub mod WebAssembly {
 
     // WebAssembly.Module
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// A `WebAssembly.Module` object contains stateless WebAssembly code
         /// that has already been compiled by the browser and can be
         /// efficiently shared with Workers, and instantiated multiple times.
@@ -3514,7 +3514,7 @@ pub mod WebAssembly {
 
     // WebAssembly.Table
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `WebAssembly.Table()` constructor creates a new `Table` object
         /// of the given size and element type.
         ///
@@ -3563,7 +3563,7 @@ pub mod WebAssembly {
 
     // WebAssembly.Memory
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory)
         #[wasm_bindgen(js_namespace = WebAssembly, extends = Object, typescript_type = "WebAssembly.Memory")]
         #[derive(Clone, Debug, PartialEq, Eq)]
@@ -3610,7 +3610,7 @@ pub mod JSON {
 
     // JSON
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `JSON.parse()` method parses a JSON string, constructing the
         /// JavaScript value or object described by the string.
         ///
@@ -3669,7 +3669,7 @@ pub mod JSON {
 
 // JsString
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_name = String, extends = Object, is_type_of = JsValue::is_string, typescript_type = "string")]
     #[derive(Clone, PartialEq, Eq)]
     pub type JsString;
@@ -4271,7 +4271,7 @@ impl fmt::Debug for JsString {
 
 // Symbol
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(is_type_of = JsValue::is_symbol, typescript_type = "Symbol")]
     #[derive(Clone, Debug)]
     pub type Symbol;
@@ -4411,7 +4411,7 @@ pub mod Intl {
 
     // Intl
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `Intl.getCanonicalLocales()` method returns an array containing
         /// the canonical locale names. Duplicates will be omitted and elements
         /// will be validated as structurally valid language tags.
@@ -4423,7 +4423,7 @@ pub mod Intl {
 
     // Intl.Collator
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `Intl.Collator` object is a constructor for collators, objects
         /// that enable language sensitive string comparison.
         ///
@@ -4467,7 +4467,7 @@ pub mod Intl {
 
     // Intl.DateTimeFormat
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `Intl.DateTimeFormat` object is a constructor for objects
         /// that enable language-sensitive date and time formatting.
         ///
@@ -4518,7 +4518,7 @@ pub mod Intl {
 
     // Intl.NumberFormat
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `Intl.NumberFormat` object is a constructor for objects
         /// that enable language sensitive number formatting.
         ///
@@ -4568,7 +4568,7 @@ pub mod Intl {
 
     // Intl.PluralRules
     #[wasm_bindgen]
-    extern "C" {
+    extern "wasm-bindgen" {
         /// The `Intl.PluralRules` object is a constructor for objects
         /// that enable plural sensitive formatting and plural language rules.
         ///
@@ -4611,7 +4611,7 @@ pub mod Intl {
 
 // Promise
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     /// The `Promise` object represents the eventual completion (or failure) of
     /// an asynchronous operation, and its resulting value.
     ///
@@ -4740,7 +4740,7 @@ pub fn global() -> Object {
         // the job largely done for now and avoids the `Function` constructor at
         // the end which triggers CSP errors.
         #[wasm_bindgen]
-        extern "C" {
+        extern "wasm-bindgen" {
             type Global;
 
             #[wasm_bindgen(getter, catch, static_method_of = Global, js_class = globalThis, js_name = globalThis)]
@@ -4796,7 +4796,7 @@ pub fn global() -> Object {
 macro_rules! arrays {
     ($(#[doc = $ctor:literal] #[doc = $mdn:literal] $name:ident: $ty:ident,)*) => ($(
         #[wasm_bindgen]
-        extern "C" {
+        extern "wasm-bindgen" {
             #[wasm_bindgen(extends = Object, typescript_type = $name)]
             #[derive(Clone, Debug)]
             pub type $name;

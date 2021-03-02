@@ -595,7 +595,7 @@ impl Interface {
 
             #unstable_attr
             #[wasm_bindgen]
-            extern "C" {
+            extern "wasm-bindgen" {
                 #[wasm_bindgen(
                     #is_type_of
                     #prefixes
@@ -735,7 +735,7 @@ impl Dictionary {
 
             #unstable_attr
             #[wasm_bindgen]
-            extern "C" {
+            extern "wasm-bindgen" {
                 #[wasm_bindgen(extends = ::js_sys::Object, js_name = #js_name)]
                 #[derive(Debug, Clone, PartialEq, Eq)]
                 #doc_comment
@@ -878,7 +878,7 @@ impl Namespace {
                 use wasm_bindgen::prelude::*;
 
                 #[wasm_bindgen]
-                extern "C" {
+                extern "wasm-bindgen" {
                     #(#functions)*
                 }
             }

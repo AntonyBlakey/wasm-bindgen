@@ -10,7 +10,7 @@ interface ITextStyle {
 "#;
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(typescript_type = "ITextStyle")]
     pub type ITextStyle;
 }

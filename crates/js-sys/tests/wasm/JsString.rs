@@ -5,7 +5,7 @@ use wasm_bindgen::JsValue;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/JsString.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn new_string_object() -> JsValue;
     fn get_replacer_function() -> Function;
 }

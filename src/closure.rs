@@ -47,7 +47,7 @@ use crate::UnwrapThrowExt;
 /// use wasm_bindgen::prelude::*;
 ///
 /// #[wasm_bindgen]
-/// extern "C" {
+/// extern "wasm-bindgen" {
 ///     fn setInterval(closure: &Closure<dyn FnMut()>, time: u32) -> i32;
 ///     fn clearInterval(id: i32);
 ///
@@ -143,7 +143,7 @@ use crate::UnwrapThrowExt;
 /// use wasm_bindgen::prelude::*;
 ///
 /// #[wasm_bindgen]
-/// extern "C" {
+/// extern "wasm-bindgen" {
 ///     fn requestAnimationFrame(closure: &Closure<dyn FnMut()>) -> u32;
 ///     fn cancelAnimationFrame(id: u32);
 ///
@@ -203,7 +203,7 @@ use crate::UnwrapThrowExt;
 /// use wasm_bindgen::prelude::*;
 ///
 /// #[wasm_bindgen]
-/// extern "C" {
+/// extern "wasm-bindgen" {
 ///     // We modify the binding to take an untyped `JsValue` since that is what
 ///     // is returned by `Closure::once_into_js`.
 ///     //
@@ -338,7 +338,7 @@ where
         // See crates/cli-support/src/js/closures.rs for a more information
         // about what's going on here.
 
-        extern "C" fn describe<T: WasmClosure + ?Sized>() {
+        extern "wasm-bindgen" fn describe<T: WasmClosure + ?Sized>() {
             inform(CLOSURE);
             T::describe()
         }
@@ -558,7 +558,7 @@ macro_rules! doit {
         {
             fn describe() {
                 #[allow(non_snake_case)]
-                unsafe extern "C" fn invoke<$($var: FromWasmAbi,)* R: ReturnWasmAbi>(
+                unsafe extern "wasm-bindgen" fn invoke<$($var: FromWasmAbi,)* R: ReturnWasmAbi>(
                     a: usize,
                     b: usize,
                     $($var: <$var as FromWasmAbi>::Abi),*
@@ -610,7 +610,7 @@ macro_rules! doit {
         {
             fn describe() {
                 #[allow(non_snake_case)]
-                unsafe extern "C" fn invoke<$($var: FromWasmAbi,)* R: ReturnWasmAbi>(
+                unsafe extern "wasm-bindgen" fn invoke<$($var: FromWasmAbi,)* R: ReturnWasmAbi>(
                     a: usize,
                     b: usize,
                     $($var: <$var as FromWasmAbi>::Abi),*
@@ -730,7 +730,7 @@ where
 {
     fn describe() {
         #[allow(non_snake_case)]
-        unsafe extern "C" fn invoke<A: RefFromWasmAbi, R: ReturnWasmAbi>(
+        unsafe extern "wasm-bindgen" fn invoke<A: RefFromWasmAbi, R: ReturnWasmAbi>(
             a: usize,
             b: usize,
             arg: <A as RefFromWasmAbi>::Abi,
@@ -751,7 +751,7 @@ where
 
         inform(invoke::<A, R> as u32);
 
-        unsafe extern "C" fn destroy<A: RefFromWasmAbi, R: ReturnWasmAbi>(a: usize, b: usize) {
+        unsafe extern "wasm-bindgen" fn destroy<A: RefFromWasmAbi, R: ReturnWasmAbi>(a: usize, b: usize) {
             // See `Fn()` above for why we simply return
             if a == 0 {
                 return;
@@ -773,7 +773,7 @@ where
 {
     fn describe() {
         #[allow(non_snake_case)]
-        unsafe extern "C" fn invoke<A: RefFromWasmAbi, R: ReturnWasmAbi>(
+        unsafe extern "wasm-bindgen" fn invoke<A: RefFromWasmAbi, R: ReturnWasmAbi>(
             a: usize,
             b: usize,
             arg: <A as RefFromWasmAbi>::Abi,
@@ -795,7 +795,7 @@ where
 
         inform(invoke::<A, R> as u32);
 
-        unsafe extern "C" fn destroy<A: RefFromWasmAbi, R: ReturnWasmAbi>(a: usize, b: usize) {
+        unsafe extern "wasm-bindgen" fn destroy<A: RefFromWasmAbi, R: ReturnWasmAbi>(a: usize, b: usize) {
             // See `Fn()` above for why we simply return
             if a == 0 {
                 return;

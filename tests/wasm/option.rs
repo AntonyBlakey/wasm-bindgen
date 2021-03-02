@@ -2,7 +2,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/option.js")]
-extern "C" {
+extern "wasm-bindgen" {
     pub type MyType;
     #[wasm_bindgen(constructor)]
     fn new() -> MyType;

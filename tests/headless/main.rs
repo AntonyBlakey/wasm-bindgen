@@ -28,7 +28,7 @@ fn works() {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_namespace = console)]
     pub fn log(s: &str);
 }
@@ -41,7 +41,7 @@ fn can_log_html_strings() {
 #[wasm_bindgen]
 pub fn import_export_same_name() {
     #[wasm_bindgen(module = "/tests/headless/main.js")]
-    extern "C" {
+    extern "wasm-bindgen" {
         fn import_export_same_name();
     }
     import_export_same_name();

@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = ExtendableEvent , extends = Event , extends = :: js_sys :: Object , js_name = NotificationEvent , typescript_type = "NotificationEvent")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `NotificationEvent` class."]

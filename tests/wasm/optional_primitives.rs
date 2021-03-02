@@ -2,7 +2,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/optional_primitives.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn optional_i32_js_identity(a: Option<i32>) -> Option<i32>;
     fn optional_u32_js_identity(a: Option<u32>) -> Option<u32>;
     fn optional_isize_js_identity(a: Option<isize>) -> Option<isize>;

@@ -5,7 +5,7 @@ use wasm_bindgen_futures::{spawn_local, JsFuture};
 
 // lifted from the `console_log` example
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_namespace = console)]
     fn log(a: &str);
 }

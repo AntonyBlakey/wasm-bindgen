@@ -6,7 +6,7 @@ to JavaScript's `Date.now()` static method, one would use this attribute:
 
 ```rust
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     type Date;
 
     #[wasm_bindgen(static_method_of = Date)]

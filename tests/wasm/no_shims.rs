@@ -48,7 +48,7 @@ use wasm_bindgen_test::*;
     module.exports.MyNamespace.incoming_namespaced = function () { return 3.14; };
     module.exports.MyNamespace.outgoing_namespaced = function (pi) { assert_eq(3.14, pi); };
 ")]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(assert_no_shim)]
     fn trivial();
 

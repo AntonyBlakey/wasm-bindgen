@@ -2,7 +2,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/u64.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn i64_js_identity(a: i64) -> i64;
     fn u64_js_identity(a: u64) -> u64;
     fn js_works();

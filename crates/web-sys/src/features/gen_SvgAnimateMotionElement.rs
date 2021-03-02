@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = SvgAnimationElement , extends = SvgElement , extends = Element , extends = Node , extends = EventTarget , extends = :: js_sys :: Object , js_name = SVGAnimateMotionElement , typescript_type = "SVGAnimateMotionElement")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `SvgAnimateMotionElement` class."]

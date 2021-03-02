@@ -43,7 +43,7 @@ fn debug_jsfuture() {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn setTimeout(c: &Closure<dyn FnMut()>);
 }
 

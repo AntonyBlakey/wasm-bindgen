@@ -3,7 +3,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/Iterator.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn get_iterable() -> JsValue;
 
     fn get_not_iterable() -> JsValue;

@@ -12,7 +12,7 @@ pub struct Timeout {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(js_name = setTimeout)]
     fn set_timeout(closure: JsValue, millis: f64) -> JsValue;
 

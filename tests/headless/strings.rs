@@ -2,7 +2,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "/tests/headless/strings.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn test_string_roundtrip(c: &Closure<dyn Fn(String) -> String>);
 
     fn identity(s: &str) -> String;

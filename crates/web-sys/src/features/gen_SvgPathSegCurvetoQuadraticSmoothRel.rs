@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (is_type_of = | _ | false , extends = SvgPathSeg , extends = :: js_sys :: Object , js_name = SVGPathSegCurvetoQuadraticSmoothRel , typescript_type = "SVGPathSegCurvetoQuadraticSmoothRel")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `SvgPathSegCurvetoQuadraticSmoothRel` class."]

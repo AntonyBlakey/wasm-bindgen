@@ -3,7 +3,7 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen_test::*;
 
 #[wasm_bindgen(module = "tests/wasm/Proxy.js")]
-extern "C" {
+extern "wasm-bindgen" {
     fn proxy_target() -> JsValue;
     fn proxy_handler() -> Object;
 

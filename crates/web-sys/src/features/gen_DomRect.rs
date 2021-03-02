@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = DomRectReadOnly , extends = :: js_sys :: Object , js_name = DOMRect , typescript_type = "DOMRect")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `DomRect` class."]

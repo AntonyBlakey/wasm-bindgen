@@ -2,7 +2,7 @@
 use super::*;
 use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     # [wasm_bindgen (extends = Worker , extends = EventTarget , extends = :: js_sys :: Object , js_name = ChromeWorker , typescript_type = "ChromeWorker")]
     #[derive(Debug, Clone, PartialEq, Eq)]
     #[doc = "The `ChromeWorker` class."]

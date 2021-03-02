@@ -72,7 +72,7 @@ fn nullable_method() {
 }
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     fn get_global_method() -> GlobalMethod;
 }
 

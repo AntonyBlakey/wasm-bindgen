@@ -13,7 +13,7 @@ pub fn run() {
 // correctness of these annotations!
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     // Use `js_namespace` here to bind `console.log(..)` instead of just
     // `log(..)`
     #[wasm_bindgen(js_namespace = console)]

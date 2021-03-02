@@ -4,7 +4,7 @@ use wasm_bindgen::prelude::*;
 pub fn foo() {}
 
 #[wasm_bindgen]
-extern "C" {
+extern "wasm-bindgen" {
     #[wasm_bindgen(y)]
     fn bar();
 

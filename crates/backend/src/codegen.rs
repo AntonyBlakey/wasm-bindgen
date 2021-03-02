@@ -195,7 +195,7 @@ impl ToTokens for ast::Struct {
 
                     #[link(wasm_import_module = "__wbindgen_placeholder__")]
                     #[cfg(all(target_arch = "wasm32", not(target_os = "emscripten")))]
-                    extern "C" {
+                    extern "wasm-bindgen" {
                         fn #new_fn(ptr: u32) -> u32;
                     }
 
@@ -215,7 +215,7 @@ impl ToTokens for ast::Struct {
             #[no_mangle]
             #[doc(hidden)]
             #[allow(clippy::all)]
-            pub unsafe extern "C" fn #free_fn(ptr: u32) {
+            pub unsafe extern "wasm-bindgen" fn #free_fn(ptr: u32) {
                 drop(<#name as wasm_bindgen::convert::FromWasmAbi>::from_abi(ptr));
             }
 
@@ -276,7 +276,7 @@ impl ToTokens for ast::StructField {
             #[doc(hidden)]
             #[allow(clippy::all)]
             #[cfg_attr(all(target_arch = "wasm32", not(target_os = "emscripten")), no_mangle)]
-            pub unsafe extern "C" fn #getter(js: u32)
+            pub unsafe extern "wasm-bindgen" fn #getter(js: u32)
                 -> <#ty as wasm_bindgen::convert::IntoWasmAbi>::Abi
             {
                 use wasm_bindgen::__rt::{WasmRefCell, assert_not_null};
@@ -311,7 +311,7 @@ impl ToTokens for ast::StructField {
             #[doc(hidden)]
             #[cfg(all(target_arch = "wasm32", not(target_os = "emscripten")))]
             #[allow(clippy::all)]
-            pub unsafe extern "C" fn #setter(
+            pub unsafe extern "wasm-bindgen" fn #setter(
                 js: u32,
                 val: <#ty as wasm_bindgen::convert::FromWasmAbi>::Abi,
             ) {
@@ -495,7 +495,7 @@ impl TryToTokens for ast::Export {
                 export_name = #export_name,
             )]
             #[allow(clippy::all)]
-            pub extern "C" fn #generated_name(#(#args),*) -> #projection::Abi {
+            pub extern "wasm-bindgen" fn #generated_name(#(#args),*) -> #projection::Abi {
                 #start_check
                 // Scope all local variables to be destroyed after we call the
                 // function to ensure that `#convert_ret`, if it panics, doesn't
@@ -729,7 +729,7 @@ impl ToTokens for ast::ImportType {
                     fn instanceof(val: &JsValue) -> bool {
                         #[link(wasm_import_module = "__wbindgen_placeholder__")]
                         #[cfg(all(target_arch = "wasm32", not(target_os = "emscripten")))]
-                        extern "C" {
+                        extern "wasm-bindgen" {
                             fn #instanceof_shim(val: u32) -> u32;
                         }
                         #[cfg(not(all(target_arch = "wasm32", not(target_os = "emscripten"))))]
@@ -1062,7 +1062,7 @@ impl TryToTokens for ast::ImportFunction {
                 #(#attrs)*
                 #[link(wasm_import_module = "__wbindgen_placeholder__")]
                 #[cfg(all(target_arch = "wasm32", not(target_os = "emscripten")))]
-                extern "C" {
+                extern "wasm-bindgen" {
                     fn #import_name(#(#abi_arguments),*) -> #abi_ret;
                 }
                 #[cfg(not(all(target_arch = "wasm32", not(target_os = "emscripten"))))]
@@ -1226,7 +1226,7 @@ impl ToTokens for ast::ImportStatic {
                 fn init() -> #ty {
                     #[link(wasm_import_module = "__wbindgen_placeholder__")]
                     #[cfg(all(target_arch = "wasm32", not(target_os = "emscripten")))]
-                    extern "C" {
+                    extern "wasm-bindgen" {
                         fn #shim_name() -> <#ty as wasm_bindgen::convert::FromWasmAbi>::Abi;
                     }
                     #[cfg(not(all(target_arch = "wasm32", not(target_os = "emscripten"))))]
@@ -1299,7 +1299,7 @@ impl<'a, T: ToTokens> ToTokens for Descriptor<'a, T> {
             #[doc(hidden)]
             #[cfg(all(target_arch = "wasm32", not(target_os = "emscripten")))]
             #[allow(clippy::all)]
-            pub extern "C" fn #name() {
+            pub extern "wasm-bindgen" fn #name() {
                 use wasm_bindgen::describe::*;
                 // See definition of `link_mem_intrinsics` for what this is doing
                 wasm_bindgen::__rt::link_mem_intrinsics();
